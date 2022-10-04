@@ -12,7 +12,7 @@ void printArray(string[] Array)
 {
     for (int i = 0; i < Array.Length; i++)
     {
-        Console.Write($"{Array[i]}, ");
+        Console.Write($"{Array[i]} ");
     }
     Console.WriteLine("");
 }
@@ -21,15 +21,18 @@ string[] array = { "hello", "world", "123", ":-)" };
 
 printArray(array);
 
-void select(string[] Array)
+string[] selected(string[] Array)
 {
+    string[] mas = new string[Array.Length];
     for (int i = 0; i < Array.Length; i++)
     {
-        if (Array[i].Length < 3);
-        {
-            Console.Write($"{Array[i]}, ");
+        if (Array[i].Length <= 3)
+        {  
+            mas[i] = Array[i] ;
         }
     }
+    return mas;
 }
 
-select(array);
+string[] mas = selected(array);
+printArray(mas);
